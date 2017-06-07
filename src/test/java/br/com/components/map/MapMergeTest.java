@@ -4,8 +4,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.runners.MockitoJUnitRunner;
 import org.skyscreamer.jsonassert.JSONAssert;
 
 import java.util.HashMap;
@@ -14,15 +12,14 @@ import java.util.Map;
 /**
  * Created by luismoro on 07/06/17.
  */
-@RunWith(MockitoJUnitRunner.class)
 public class MapMergeTest {
 
     private MapMerge mapMerge;
+
     private Map mapResult;
     private Map mapInsidePart1;
     private Map mapInsidePart2;
     private Map mapInsidePart3;
-    private Map mapInsideFull;
     private ObjectMapper objectMapper;
 
     @Before
@@ -52,9 +49,6 @@ public class MapMergeTest {
         mapResult.put("1", mapInsidePart1);
         mapResult.put("2", mapInsidePart2);
         mapResult.put("3", mapInsidePart3);
-//        mapResult.put("4", mapInsidePart1);
-//        mapResult.put("5", mapInsidePart1);
-//        mapResult.put("6", mapInsidePart1);
 
     }
 
@@ -66,16 +60,6 @@ public class MapMergeTest {
     public void mergeMapMap1Empty() throws Exception {
         Map map1 = new HashMap();
         Map map2 = new HashMap();
-
-//        map2.put("1", mapInsidePart1);
-//        map2.put("2", mapInsidePart1);
-//        map2.put("3", mapInsidePart1);
-//        map2.put("1", mapInsidePart2);
-//        map2.put("2", mapInsidePart2);
-//        map2.put("3", mapInsidePart2);
-//        map2.put("1", mapInsidePart3);
-//        map2.put("2", mapInsidePart3);
-//        map2.put("3", mapInsidePart3);
 
         map2.put("1", mapInsidePart1);
         map2.put("2", mapInsidePart2);
@@ -228,7 +212,6 @@ public class MapMergeTest {
         mapInsideMap2.put("4", "inside12");
         map1.put("3", mapInsideMap1);
         map2.put("3", mapInsideMap2);
-
 
         printMaps(map1);
         printMaps(map2);
