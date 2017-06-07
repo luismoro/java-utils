@@ -1,4 +1,4 @@
-package br.com.components;
+package br.com.components.map;
 
 import java.util.Iterator;
 import java.util.Map;
@@ -8,14 +8,19 @@ import java.util.Map;
  */
 public class MapMerge {
 
-    private Map mergeMap(Map<String, Object> map1, Map map2) {
+    public MapMerge() {
+    }
+
+    public Map mergeMap(Map<String, Object> map1, Map map2) {
 
         Iterator it = map1.entrySet().iterator();
         while (it.hasNext()) {
             Map.Entry pairs = (Map.Entry)it.next();
             Map map2Node = (Map) map2.get(pairs.getKey());
-            ((Map)map1.get(pairs.getKey())).putAll(map2Node);
-            map2.remove(pairs.getKey());
+            if (map2Node != null) {
+                ((Map) map1.get(pairs.getKey())).putAll(map2Node);
+                map2.remove(pairs.getKey());
+            }
         }
 
         Iterator it2 = map2.entrySet().iterator();
