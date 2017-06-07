@@ -1,0 +1,46 @@
+######################
+# Java
+######################4
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+######################
+# Intellij
+######################
+**/.idea/**
+*.iml
+*.iws
+*.ipr
+*.ids
+*.orig
+
+
+######################
+# Maven
+######################
+target/
+.mvn/
+null/
+
+######################
+# Eclipse
+######################
+.settings/
+# Eclipse Core
+.project
+.classpath
+
+######################
+# RTC
+######################
+.jazz5/
+.jazzShed/
+
+
+bin/
+.metadata/
+clientdb.xml
